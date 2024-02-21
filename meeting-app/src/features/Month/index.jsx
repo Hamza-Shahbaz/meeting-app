@@ -1,8 +1,11 @@
 import { Box } from '@mui/material';
 import React from 'react'
 import MonthRow from './MonthRow';
+import { useSelector } from 'react-redux';
 
-const Month = ({ selectedMonth, selectedYear }) => {
+const Month = () => {
+    const selectedMonth = useSelector((state) => state.month.month)
+    const selectedYear = useSelector((state) => state.month.year)
     console.log(selectedYear, selectedMonth)
     const firstDay = new Date(selectedYear, selectedMonth, 1);
     let count = firstDay.getDay()
@@ -28,7 +31,7 @@ const Month = ({ selectedMonth, selectedYear }) => {
         for (let i = 0; i < weeks; i++) {
             let currentSunday = new Date(firstSunday);
             currentSunday.setDate(currentSunday.getDate() + (i * 7));
-            weeksArray.push(<MonthRow date={currentSunday} key={i} />)
+            weeksArray.push(<MonthRow date={currentSunday} weekCount={i} key={i} />)
         }
         return weeksArray
     }

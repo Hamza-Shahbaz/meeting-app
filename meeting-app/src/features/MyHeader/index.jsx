@@ -14,6 +14,7 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import { useSelector, useDispatch } from 'react-redux';
 import { nextMonth, previousMonth } from '../Month/monthSlice';
+import { Link } from 'react-router-dom';
 
 
 const pages = ['Products', 'Pricing', 'Blog'];
@@ -42,7 +43,7 @@ function MyHeader() {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" sx={{height:'5rem',}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
@@ -124,6 +125,7 @@ function MyHeader() {
           >
             LOGO
           </Typography>
+          <Link to={'create-meeting'}>This is a demo link</Link>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button
