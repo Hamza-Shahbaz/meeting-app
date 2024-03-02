@@ -24,11 +24,15 @@ import MailIcon from '@mui/icons-material/Mail';
 
 
 function App() {
+  console.log('check')
   return (
-    <Routes>
-      <Route path='/' element={<CalendarMainLayout />} />
-      <Route path='/create-meeting' element={<input value={'this is random'} />} />
-    </Routes>
+    <>
+      <h1>this is for check</h1>
+      <Routes>
+        <Route path='/' element={<CalendarMainLayout />} />
+        <Route path='/create-meeting' element={<input value={'this is random'} />} />
+      </Routes>
+    </>
   )
 }
 
@@ -134,25 +138,7 @@ function CalendarMainLayout() {
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <AppBar position="fixed" open={open}>
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            onClick={handleDrawerOpen}
-            edge="start"
-            sx={{
-              marginRight: 5,
-              ...(open && { display: 'none' }),
-            }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" noWrap component="div">
-            Mini variant drawer
-          </Typography>
-        </Toolbar>
-      </AppBar>
+      <MyHeader/>
       <Drawer variant="permanent" open={open}>
         <DrawerHeader>
           <IconButton onClick={handleDrawerClose}>

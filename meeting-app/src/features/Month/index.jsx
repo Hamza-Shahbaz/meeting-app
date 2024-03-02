@@ -6,7 +6,6 @@ import { useSelector } from 'react-redux';
 const Month = () => {
     const selectedMonth = useSelector((state) => state.month.month)
     const selectedYear = useSelector((state) => state.month.year)
-    console.log(selectedYear, selectedMonth)
     const firstDay = new Date(selectedYear, selectedMonth, 1);
     let count = firstDay.getDay()
     const firstSunday = new Date(firstDay)
