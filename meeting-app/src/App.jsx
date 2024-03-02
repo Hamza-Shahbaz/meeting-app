@@ -24,6 +24,7 @@ import MailIcon from '@mui/icons-material/Mail';
 
 
 function App() {
+  console.log('check')
   return (
     <>
       <h1>this is for check</h1>
